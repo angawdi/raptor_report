@@ -1,1 +1,30 @@
 <h2>Sign Up</h2>
+
+<form action="/auth/signup" method="POST">
+	<div class="row">
+		<div class="input-field col s12 m6">
+			<label for="firstname">First Name</label>
+			<input type="text" id="firstname" name="firstname" class="validate" placeholder="First Name">
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="lastname">Last Name:</label>
+			<input type="text" id="lastname" name="lastname" class="validate" placeholder="Last Name">
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" class="validate" placeholder="your email">
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" class="validate" placeholder="your email">
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="dob">Date of Birth:</label>
+			<input type="date" id="dob" name="dob" class="validate" placeholder="Date of Birth">
+		</div>
+		<div class="input-field col s12 m6">
+			<label for="image">Image Url:</label>
+			<input type="url" id="image" name="image" class="validate">
+		</div>
+	</div>
+</form>
