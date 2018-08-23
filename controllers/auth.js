@@ -1,5 +1,6 @@
 // Require express
 var express = require('express');
+var passport = require('../config/passportConfig');
 
 // includes the models
 var db = require('../models');
@@ -12,10 +13,13 @@ router.get('/login', function(req, res){
 	res.render('auth/login');
 });
 
-router.post('/login', function(req, res){
-	console.log(req.body);
-	res.send('login post route');
-});
+router.post('/login',passport.authenticate('local', {
+	successRedirect: '/profile',
+	successFlash: 'Yay, login successfull! :D',
+	failureRedirect: '/auth/login',
+	failureFlash: 'Invalid Credentials'
+
+}));
 
 router.get('/signup', function(req, res){
 	res.render('auth/signup');
@@ -29,8 +33,14 @@ router.post('/signup', function(req, res){
 		defaults: req.body
 	}).spread(function(user, wasCreated){
 		if(wasCreated){ // this is expected behavior
-			// TODO automatically log the user in!
-			res.redirect('/profile');
+			//  automatically log the user in!
+			passport.authenticate('local', {
+				successRedirect: '/profile',
+				successFlash: 'Successfully logged in!',
+				failureRedirect: '/',
+				failureFlash: 'Oh Noes?'
+			})(req, res);
+		
 		}else{ // User messed up, they already have a login
 			// TODO: send the user some sort of error message
 			res.redirect('/auth/login');
