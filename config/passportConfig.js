@@ -23,20 +23,20 @@ passport.deserializeUser(function(id, callback){
 
 passport.use(new passportLocalStrategy({
 	usernameField: 'email',
-	passwordField: 'passport'
-}, function(email, passport, callback){
+	passwordField: 'password'
+}, function(email, password, callback){
 	db.user.findOne({
 		where: { email: email }
 	}).then(function(foundUser){
-		if(!foundUser  || !foundUser.isValidPassword(passport)){
-			callback('Invalid User or Passport', null);
+		if(!foundUser  || !foundUser.isValidPassword(password)){
+			callback(null, null);
 		}
 		else{
 			callback(null, foundUser);
 		}
 	}).catch(function(err){
 		callback(err, null);
-	})
+	});
 }));
 
 module.exports = passport;

@@ -25,7 +25,7 @@ router.get('/signup', function(req, res){
 	res.render('auth/signup');
 });
 
-router.post('/signup', function(req, res){
+router.post('/signup', function(req, res, next){
 	console.log(req.body);
 	req.body.admin = false;
 	db.user.findOrCreate({
@@ -39,20 +39,23 @@ router.post('/signup', function(req, res){
 				successFlash: 'Successfully logged in!',
 				failureRedirect: '/',
 				failureFlash: 'Oh Noes?'
-			})(req, res);
+			})(req, res, next);
 		
 		}else{ // User messed up, they already have a login
 			// TODO: send the user some sort of error message
+			req.flash('error', 'please login');
 			res.redirect('/auth/login');
 		}
 	}).catch(function(err){
-		console.log(err);
-		res.send(err);
+		req.flash('error', err.massage);
+		res.redirect('/auth/signup');
 	})
 });
 
 router.get('/logout', function(req, res){
-	res.send('logout route'); /////////
+	req.logout(); // logs out of session
+	req.flash('success', 'successfully logged out!');
+	res.redirect('/');
 });
 
 module.exports = router;
