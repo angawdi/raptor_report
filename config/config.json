@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "auth-boiler",
+    "database": "auth_boiler",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": "false"
