@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     dob: DataTypes.DATE,
-    admin: DataTypes.BOOLEAN,
     image: {
       type: DataTypes.STRING,
       validate: {
