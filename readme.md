@@ -1,3 +1,7 @@
+# Raptor Report
+
+More content comming soon
+
 # Auth Boilerplate: How to Use
 This is a bare bones node/express app with basic user authentication. It exists so that I don't need 
 to do this bit from scratch every time I start a new project that needs to include auth. Instead, I can take this fairly
@@ -24,7 +28,7 @@ generic boilerplate code and customize it on a new project.
 | email       | String   | usernameField for login |
 | password    | String   | hash with bcrypt        |
 | dob         | Date     |                         |
-| admin       | Boolean  | Admin or Regular User   |
+
 
 > NOTE: Change these fields in both the model and migration files BEFORE 
 running sequelize db:migrate

@@ -26,8 +26,6 @@ router.get('/signup', function(req, res){
 });
 
 router.post('/signup', function(req, res, next){
-	console.log(req.body);
-	req.body.admin = false;
 	db.user.findOrCreate({
 		where: { email: req.body.email },
 		defaults: req.body

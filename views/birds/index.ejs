@@ -1,0 +1,13 @@
+<h2>All my birds</h2>
+
+<% birds.forEach(function(b) {%>
+	<div class="card gray lighten-1">
+		<div class="card-title">
+			<%= b.name %> (<%= b.scientific_name%>)
+		</div>
+		<div class="card-panel">
+			<%=b.notes%>
+			<hr>
+			Seen in <%= b.location %> on <%= moment(b.createdAt).calendar() %>
+		</div>
+<% });%>
