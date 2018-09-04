@@ -40,6 +40,7 @@ app.use('/auth', require('./controllers/auth'));
 app.use('/birds', require('./controllers/birds'));
 app.use('/profile', require('./controllers/profile'));
 app.use('/fruits', require('./controllers/fruit'));
+app.use('/cart', require('./controllers/cart'));
 
 // Define routes
 app.get('/', function(req, res){
