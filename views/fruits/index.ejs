@@ -11,36 +11,22 @@
 	</div>
 <%});%>
 
-<!-- 
-<hr>
-<div >
-	<img src="https://s8.postimg.cc/b7n695ehx/orange111.jpg">
-	<h4>Orange</h4>
-	<div class="price">Buy 1 lb for <span>$1.00</span></div>
-	<br>
-	
-</div>
-<hr>
-<div >
-	<img src="https://image.ibb.co/kKosxz/tooo.jpg">
-	<h4>Tomato</h4>
-	<div class="price">Buy 1 lb for <span>$2.00</span></div>
-	<br>
-	
-</div>
-<hr>
-<div >
-	<img src="https://s8.postimg.cc/g16xe5g6d/apples2.png">
-	<h4>Apple</h4>
-	<div class="price">Buy 1 lb for <span> $3.00</span></div>
-	<br>
-	
-</div>
-<hr>
-<div >
-	<img src="https://s8.postimg.cc/djv672r6t/image_32640c6de1ce0d9ba634edfa7d49cc0f.jpg">
-	<h4>Grapes</h4>
-	<div class="price">Buy 1 lb for <span>$4.00</span></div>
-	<br>
-	
-</div> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$('.delete-btn').click(function(e){
+	e.preventDefault();
+	var url = $(this).attr('href');
+ 	$.ajax({
+		method: "DELETE",
+		url: url
+	}).done(function(data){
+		// console.log('message:', data);
+		window.location = '/fruits';
+	}).fail(function(err){
+		console.log('error message:', err);
+	});
+});
+})
+</script> 

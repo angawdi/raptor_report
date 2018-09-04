@@ -26,4 +26,22 @@ router.post('/', function(req, res){
 	});
 });
 
+router.get('/:id', function(req, res){
+	db.fruit.findById(req.params.id).then(function(m){
+			res.send(m);
+	}).catch(function(err){
+		res.render('404');
+	});
+});
+
+router.delete('/:id', function(req, res){
+	db.fruit.destroy({
+		where: {id: req.params.id}
+	}).then(function(recentmovie){
+		res.send('sucessfully deleted!');
+	}).catch(function(e){
+		res.send('sad fail');
+	});
+});
+
 module.exports = router;
