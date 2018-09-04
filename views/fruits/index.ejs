@@ -1,12 +1,13 @@
-<h2>Welcome to the Sun Flower Organic Store</h2>
 
 <% fruit.forEach(function(m){%>
 	<div>
-		<h2>
-			<%=m.id%> - <%=m.name%>
-		</h2>
-		<img src="<%= m.img%>">
+		<h4>
+			<%=m.name%>
+		</h4>
+		<img src="<%= m.image%>"><br>
+		Price: $<%=m.price%>/lb <br>
 		<a class="delete-btn" href="/fruits/<%=m.id%>">Delete</a>
+		<hr>
 	</div>
 <%});%>
 

@@ -19,7 +19,11 @@ router.get('/new', function(req, res){
 });
 
 router.post('/', function(req, res){
-	res.send(req.body);
+	db.fruit.create(req.body).then(function(createdFruit){
+		res.redirect('/fruits');
+	}).catch(function(err){
+		res.render('404');
+	});
 });
 
 module.exports = router;
