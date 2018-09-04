@@ -5,7 +5,9 @@
   "repository": "https://github.com/angawdi/auth-boiler.git",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+    }
   },
   "keywords": [],
   "author": "",
@@ -24,6 +26,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.1.1"
   }
 }
