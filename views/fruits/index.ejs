@@ -1,5 +1,16 @@
 <h2>Welcome to the Sun Flower Organic Store</h2>
 
+<% fruit.forEach(function(m){%>
+	<div>
+		<h2>
+			<%=m.id%> - <%=m.name%>
+		</h2>
+		<img src="<%= m.img%>">
+		<a class="delete-btn" href="/fruits/<%=m.id%>">Delete</a>
+	</div>
+<%});%>
+
+<!-- 
 <hr>
 <div >
 	<img src="https://s8.postimg.cc/b7n695ehx/orange111.jpg">
@@ -31,4 +42,4 @@
 	<div class="price">Buy 1 lb for <span>$4.00</span></div>
 	<br>
 	
-</div>
+</div> -->
