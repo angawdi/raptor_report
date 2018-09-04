@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "raptor_report",
+    "database": "organic2",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": "false"
